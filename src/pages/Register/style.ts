@@ -11,13 +11,5 @@ export const Background = styled.div `
     height:100vh;
     filter:brightness(0.5);
 
-    @media (max-width:700px) {
-        display:none;     
-    }
-
 
 `
-
-export const Container = styled.div `
-    
-` 

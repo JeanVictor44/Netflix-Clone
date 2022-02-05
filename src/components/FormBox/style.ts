@@ -1,7 +1,17 @@
 import styled from "styled-components";
 
 export const Container =  styled.form `
-    user-select:all;
+    @media (max-width:700px) {  
+            z-index:-1;
+            padding: 100px 20px 40px;
+            max-width:100%;
+            height:100vh;
+            background-color:#000;
+            left:0;
+            top:0;
+            transform:translate(0,-0);
+    }
+    user-select:none;
     position:absolute;
     left:50%;
     top:50%;
