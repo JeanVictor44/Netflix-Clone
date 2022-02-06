@@ -26,9 +26,9 @@
 
 ## :art: Layout
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-    <img src="./previews/login-image.jpeg" alt="Login page">
-    <img src="./previews/register-image.jpeg" alt="Register page"/>
-    <img src="./previews/profiles-image.jpeg" alt="Profiles page">
+    <img src="./previews/login-image.jpeg" alt="Login page" width="500px">
+    <img src="./previews/register-image.jpeg" alt="Register page" width="500px"/>
+    <img src="./previews/profiles-image.jpeg" alt="Profiles page" width="500px">
 </p>
 
 ## :hammer_and_wrench: Tecnologias
