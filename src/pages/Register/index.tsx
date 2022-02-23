@@ -1,7 +1,7 @@
 import { Header } from '../../components/Header'
 import { FormBox } from '../../components/FormBox'
 import { Background} from './style'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { USER_KEY } from '../../constants'
 import 'react-notifications-component/dist/theme.css'
@@ -11,7 +11,7 @@ export const Register = () => {
     const [ email, setEmail ] = useState('') 
     const [ password, setPassword ] = useState('')
     const [ passwordConfirmation, setPasswordConfirmation] = useState('')
-
+    const navigate = useNavigate()
     
     // Ter um contador guardado no localstorage para a quantidade de usuários
     const register = (ev:React.MouseEvent<HTMLButtonElement>) => {
@@ -34,7 +34,6 @@ export const Register = () => {
                 email,
                 password
             })
-            
             Store.addNotification({
                 title:'Registro realizado com sucesso',
                 message:'Seu Registro foi realizado com sucesso',
@@ -45,8 +44,11 @@ export const Register = () => {
                     onScreen:true
                 }
             })
-
             localStorage.setItem( USER_KEY,userRegister)
+            setTimeout(() => {
+                navigate('/login')
+            }, 2000)
+            
         }else {
             Store.addNotification({
                 title:'Senhas não coincidem',

@@ -2,6 +2,8 @@ import { ReactNode } from 'react'
 import { DetailsSerieProvider } from './DetailsSerie'
 import { HomeMoviesProvider } from './HomeMovies' 
 import { TrailerModalProvider } from './TrailerModal'
+import { AuthProvider } from './Auth'
+
 interface GlobalContextProps {
     children:ReactNode
 } 
@@ -11,7 +13,9 @@ export const GlobalContext = ({children}:GlobalContextProps ) => {
         <DetailsSerieProvider>
             <HomeMoviesProvider>
                 <TrailerModalProvider>
-                    {children}
+                    <AuthProvider>
+                        {children}
+                    </AuthProvider>
                 </TrailerModalProvider>
             </HomeMoviesProvider>
         </DetailsSerieProvider>
