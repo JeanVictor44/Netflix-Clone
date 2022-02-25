@@ -1,9 +1,41 @@
 import { Header } from '../../components/Header'
 import { Profile } from '../../components/Profile'
 import * as S from './style'
+import { USER_DATA_KEY } from '../../constants'
+import { UserData } from '../../common/types'
+import { useState } from 'react'
 
 export const CreateProfile = () => {
-    // verificar se a chave ja existe no localStorage caso exista criar outro perfil, se não, criar a chave com o novo perfil
+    const [ profileName, setProfileName ] = useState('')
+
+    const createProfile = () => {
+        const userDataStorage = JSON.parse(localStorage.getItem(USER_DATA_KEY) as string) as UserData
+        
+        if(userDataStorage?.profiles){
+            const newUserDataStorage = {
+                ...userDataStorage,
+                profiles:[
+                    ...userDataStorage.profiles,
+                    {
+                        name:profileName
+                    }
+                    
+                ]
+            } 
+            localStorage.setItem(USER_DATA_KEY, JSON.stringify(newUserDataStorage))
+            return
+        }
+        const newUserDataStorage = JSON.stringify({
+            profiles: [
+                {
+                    name:profileName
+                }
+            ]
+        })
+        localStorage.setItem(USER_DATA_KEY, newUserDataStorage)
+
+    }
+
     return (
         <S.Container>
             <Header />
@@ -15,7 +47,7 @@ export const CreateProfile = () => {
                 
                 <S.ProfileInfoContainer>
                     <Profile urlImage="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"/>
-                    <input type="text" placeholder="Name"/>
+                    <input type="text" placeholder="Name" onChange={(ev) => setProfileName(ev.target.value)}/>
                     <label>
                         <input type="checkbox" />
                         <p>Kid?</p>
@@ -26,7 +58,7 @@ export const CreateProfile = () => {
                 <S.Line />
 
                 <S.ButtonsContainer>
-                    <button>Continar</button>
+                    <button onClick={createProfile}>Criar</button>
                     <button>Cancelar</button>
                 </S.ButtonsContainer>
                 

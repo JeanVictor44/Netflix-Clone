@@ -26,6 +26,7 @@ export const ButtonsContainer = styled.div `
 export const ProfileInfoContainer = styled.div `
     padding:20px 0px;
     display:flex;
+    gap:10px;
     align-items:center;
     justify-content:space-between;
     label {

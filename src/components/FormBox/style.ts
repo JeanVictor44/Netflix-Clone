@@ -1,12 +1,17 @@
 import styled from "styled-components";
 
-export const Container =  styled.form `
+interface ContainerProps {
+    isEmailInvalid? : boolean;
+}
+
+export const Container =  styled.form<ContainerProps>`
     @media (max-width:700px) {  
             z-index:-1;
             padding: 100px 20px 40px;
             max-width:100%;
             height:100vh;
             background-color:#000;
+
             left:0;
             top:0;
             transform:translate(0,-0);
@@ -34,7 +39,7 @@ export const Container =  styled.form `
             margin-top:30px;
         }
         padding-left:15px;
-        border:none;
+        border:1px solid ${({isEmailInvalid}) => (isEmailInvalid ? "#E87C03" : "transparent")};
         outline:none;
         color:#fff;
     }
