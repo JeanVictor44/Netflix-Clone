@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const Container = styled.div `
 ` 
 export const ButtonsContainer = styled.div `
+    @media (max-width: 650px) {
+        flex-direction:column;
+    }
+
     margin-top:20px;
     display:flex;
     gap:10px;
@@ -24,10 +28,20 @@ export const ButtonsContainer = styled.div `
 `
 
 export const ProfileInfoContainer = styled.div `
-    padding:20px 0px;
+    @media (max-width: 650px) {
+        flex-direction:column;
+        #input-profile-name {
+            width:100%;
+        }
+        label {
+            align-self: flex-start;
+        }
+    }
+
     display:flex;
+    padding:20px 0px;
     gap:10px;
-    align-items:center;
+    align-items:center; 
     justify-content:space-between;
     label {
         display:flex;
@@ -78,7 +92,10 @@ export const ProfileInfoContainer = styled.div `
     }
 `
 export const Main = styled.main `
-    width:40%;
+    @media (max-width: 650px) {
+        width:80%;
+    }
+    width:50%;
     position:absolute;
     left:50%;
     top:30%;

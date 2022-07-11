@@ -47,7 +47,7 @@ export const CreateProfile = () => {
                 
                 <S.ProfileInfoContainer>
                     <Profile urlImage="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"/>
-                    <input type="text" placeholder="Name" onChange={(ev) => setProfileName(ev.target.value)}/>
+                    <input id='input-profile-name' type="text" placeholder="Name" onChange={(ev) => setProfileName(ev.target.value)}/>
                     <label>
                         <input type="checkbox" />
                         <p>Kid?</p>
