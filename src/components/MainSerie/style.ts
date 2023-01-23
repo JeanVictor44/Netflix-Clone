@@ -9,7 +9,7 @@ interface ContainerProps {
 }
 
 export const Container = styled.section<ContainerProps>`
-    height:95vh;
+    height:85vh;
     background:linear-gradient(to right, rgba(17,17,17,0.9) 20%, transparent 80%), 
     linear-gradient(to top, rgba(17,17,17,0.5) 5%, transparent 95%), url(${props => props.background}), no-repeat;
     background-position:center;

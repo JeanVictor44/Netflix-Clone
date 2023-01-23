@@ -50,13 +50,6 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Criar página de login 
 - [x] Criar página de registro 
 - [x] Desenvolver página de navegação para acessar os filmes 
-- [x] Construir pagina de perfis 
-- [ ] Mostrar informações dos filmes ao passar o mouse em cima dos posters 
-- [ ] Programar a funcionalidade de favoritagem 
-- [ ] Página dos filmes favoritos
-- [ ] Função de adicionar perfil 
-- [ ] Função de editar perfil 
-- [ ] Funcionalidade de armazenar o registro, perfils e filmes favoritos relacionado a cada perfil no localStorage
 
 ## :rocket: Como executar o projeto
 

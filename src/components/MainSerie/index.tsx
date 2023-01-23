@@ -23,7 +23,7 @@ const PrincipalSerie = () => {
                 <DetailsContainer>
                     <h1>{detailsSerie.name}</h1>
                     <InfoContainer>
-                        <p>{detailsSerie.vote_average} Votos</p>
+                        <p>{detailsSerie?.vote_average.toFixed(1)} Classificação</p>
                         <p>{new Date(detailsSerie.first_air_date).getFullYear()}</p>
                         <p>{detailsSerie.number_of_seasons} Temporada{detailsSerie.number_of_seasons > 1 &&'s'}</p>
                     </InfoContainer>

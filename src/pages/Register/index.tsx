@@ -46,7 +46,7 @@ export const Register = () => {
             })
             localStorage.setItem( USER_KEY,userRegister)
             setTimeout(() => {
-                navigate('/login')
+                navigate('/browse')
             }, 2000)
             
         }else {

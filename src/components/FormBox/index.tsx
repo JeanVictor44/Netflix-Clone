@@ -5,9 +5,9 @@ interface FormBoxProps {
     children: ReactNode,
     isEmailInvalid?: boolean
 }
-export const FormBox = ({children, isEmailInvalid}: FormBoxProps) => {
+export const FormBox = ({children}: FormBoxProps) => {
     return (
-        <Container isEmailInvalid={isEmailInvalid}>
+        <Container >
             {
                 children
             }

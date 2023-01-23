@@ -39,7 +39,7 @@ export const Container =  styled.form<ContainerProps>`
             margin-top:30px;
         }
         padding-left:15px;
-        border:1px solid ${({isEmailInvalid}) => (isEmailInvalid ? "#E87C03" : "transparent")};
+        border:1px solid transparent;
         outline:none;
         color:#fff;
     }

@@ -1,30 +1,28 @@
 import { Header } from '../../components/Header'
 import { FormBox } from '../../components/FormBox'
 import { Background, Container } from './style'
-import { ChangeEvent, MouseEvent, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { USER_DATA_KEY, USER_KEY } from '../../constants'
-import { User, UserData } from '../../common/types'
+import { User } from '../../common/types'
 import { ReactNotifications, Store} from 'react-notifications-component'
 
 export const Login = () => {
     const [ email, setEmail ] = useState('')
     const [ password, setPassword ] = useState('')
-    const [ isEmailInvalid, setIsEmailInvalid ] = useState(true)
+
     const navigate = useNavigate()
 
     const login = (event:MouseEvent<HTMLButtonElement>) => {
         event.preventDefault()
         const userCredentialsStorage = JSON.parse(localStorage.getItem(USER_KEY) as string) as User
-        const userDataStorage = JSON.parse(localStorage.getItem(USER_DATA_KEY) as string) as UserData
-        
+        console.log(userCredentialsStorage)
+        console.log(email, password)
         const isCorrectCredentials = userCredentialsStorage?.email === email && userCredentialsStorage?.password === password 
-        const haveProfile = Boolean(userDataStorage?.profiles)
 
-        if(isCorrectCredentials && haveProfile){
-            navigate('/profiles')
-        }else if(isCorrectCredentials && haveProfile === false){
-            navigate('/createprofile')
+
+        if(isCorrectCredentials ){
+            navigate('/browse')
         }else if( isCorrectCredentials === false ){
             Store.addNotification({
                 title:'Login inválido',
@@ -39,23 +37,16 @@ export const Login = () => {
         }
     }
 
-    const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
-        setEmail(event.target.value)
-        if(email.length === 0){
-            setIsEmailInvalid(true)
-        }else {
-            setIsEmailInvalid(false)
-        }
-    }
+   
 
     return (
         <Container>
             <Header /> 
             <Background/>
             <ReactNotifications />
-            <FormBox isEmailInvalid={isEmailInvalid}>
+            <FormBox>
                 <h1>Entrar</h1>
-                <input type="email" placeholder="Email ou número de telefone" onChange={handleEmailChange}/>
+                <input type="email" placeholder="Email ou número de telefone" onChange={(ev) => setEmail(ev.target.value)}/>
                 
                 <input type= "password" placeholder="Senha" onChange={(ev) => setPassword(ev.target.value)}/>
                 <button type="submit" onClick={login}>
