@@ -32,6 +32,7 @@ const Header = () => {
                     <li><a href="#">Minha Lista</a></li>
                 </ul>
             </Navigation>
+            
             </div>
 
             <div>

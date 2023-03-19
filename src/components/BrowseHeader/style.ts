@@ -17,6 +17,7 @@ export const Container = styled.header<ContainerProps>`
     background:${({background}) => background ? '#000' : 'transparent'};
 
     
+    
     input[type="text"] {
         outline:none;
         transition:all .2s ease-out;
@@ -24,12 +25,15 @@ export const Container = styled.header<ContainerProps>`
         width:300px;
         padding:12px;
         font-size:17px;
-        background-color:#333;
+        background-color:#d7d7d7;
         border:none;
-        color:#fff; 
+        color:#000; 
         margin-right:20px;
         border-radius:5px;
     }
+    
+    
+    
     div:nth-child(1) {
         display:flex;
         align-items:center;
@@ -37,9 +41,22 @@ export const Container = styled.header<ContainerProps>`
     div:nth-child(1) > div {
         width:170px;
     }
+
+    @media (max-width:650px) {
+        input[type="text"] {
+            display:none;
+        }
+        div:nth-child(1) > div {
+            width:130px;
+        }
+    }
 `
 
 export const Navigation = styled.nav `
+    @media (max-width: 650px) {
+        display: none;
+        
+    }
     margin-left:45px;
     ul {
         display:flex;

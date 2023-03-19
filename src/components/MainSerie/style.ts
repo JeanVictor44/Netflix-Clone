@@ -37,9 +37,22 @@ export const DetailsContainer = styled.div `
         margin-bottom:15px;
         color:#fff;
     }
+    
     p:last-child {
         font-size:18px;
         color:#fff;
+        
+    }
+
+    @media (max-width:650px) {
+        h1 {
+            font-size: 30px;
+        
+        }
+        p:last-child {
+            font-size:14px;
+        }
+        
     }
     
     
@@ -59,6 +72,11 @@ export const InfoContainer = styled.div`
     }
     p:nth-child(n+2) { 
         color:#fff;
+    }
+    @media (max-width:650px) {
+        p {
+            font-size:14px;
+        }
     }
 ` 
 export const ContainerButtons = styled.div `
@@ -82,10 +100,26 @@ export const ContainerButtons = styled.div `
         background-color:#333;
         color:#fff;
     }
+
+    @media (max-width:650px) {
+        button {
+            width:140px;
+            height:35px;
+            font-size: 14px;
+        }
+        img {
+            width: 12px;
+        }
+        
+    }
 `
 export const Overview = styled.p `
     color:#817A70;
-    width:500px;
+    max-width:500px;
     font-size:18px;
     line-height:1.4;
+    @media (max-width:650px) {
+        font-size:14px;
+        max-width: 350px;
+    }
 `

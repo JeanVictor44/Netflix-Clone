@@ -35,9 +35,6 @@ const PrincipalSerie = () => {
                     </ContainerButtons>
                     <p><strong>Gêneros</strong>: {detailsSerie.genres.map(genre => genre.name + ' ')}</p>
                 </DetailsContainer>
-                <ButtonScrollDown>
-                        <img src={arrowDown} alt="Arrow Down"/>
-                </ButtonScrollDown>
             </Container>
         )
     }
